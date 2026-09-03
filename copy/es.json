@@ -1,0 +1,314 @@
+{
+ "_comment": "SPANISH LAYER (es-ES). Peninsular Spanish, informal 'tú' throughout, phrasing suited to a barbershop on the Costa del Sol. Keys absent here fall back to English via deep_merge in src/build.py. The brand name is never translated: always 'The Cave', never 'La Cueva'. Same sentence rules as en.json: under 18 words, no exclamation marks, second person, present tense.",
+ "lang": "es",
+ "hreflang": "es-ES",
+ "dir_prefix": "es/",
+ "meta": {
+  "home_title": "The Cave | Barbería en La Cala de Mijas, Málaga",
+  "home_desc": "Cortes de precisión, diseño de barba y afeitado tradicional en La Cala de Mijas. Reserva online con Gabriel o Ygor en The Cave, Av. Las Gardenias 9, Mijas Costa.",
+  "services_title": "Servicios | The Cave, La Cala de Mijas",
+  "services_desc": "La carta completa con precios de la barbería The Cave en La Cala de Mijas. Cortes, diseño de barba, afeitado tradicional y estética, con precios desde y duración.",
+  "experience_title": "La Experiencia | The Cave, La Cala de Mijas",
+  "experience_desc": "Cómo funciona un corte en The Cave: la consulta, el corte, el acabado y el local. Barbería masculina en La Cala de Mijas.",
+  "gallery_title": "Galería | The Cave, La Cala de Mijas",
+  "gallery_desc": "Cortes, degradados y trabajo de barba recientes desde los sillones de The Cave, La Cala de Mijas. Todas las fotos son trabajo nuestro.",
+  "about_title": "Sobre nosotros | The Cave, La Cala de Mijas",
+  "about_desc": "The Cave es la barbería masculina de Av. Las Gardenias, en La Cala de Mijas, dentro del local de London and Co. Cortes, barbas y afeitados, con cita previa.",
+  "findus_title": "Dónde estamos | The Cave, La Cala de Mijas",
+  "findus_desc": "Barbería The Cave, Av. Las Gardenias 9, local 1, Jardín Botánico, Mijas Costa, Málaga 29649. Horario, teléfono, WhatsApp y cómo llegar.",
+  "careers_title": "Trabaja con nosotros | The Cave, La Cala de Mijas",
+  "careers_desc": "Empleo de barbero en The Cave, La Cala de Mijas. Preséntate y enséñanos tu trabajo.",
+  "privacy_title": "Privacidad | The Cave, La Cala de Mijas",
+  "privacy_desc": "Información de privacidad de thecaveforhim.com.",
+  "cookies_title": "Cookies | The Cave, La Cala de Mijas",
+  "cookies_desc": "Información sobre cookies de thecaveforhim.com. Esta web no utiliza cookies.",
+  "notfound_title": "Página no encontrada | The Cave, La Cala de Mijas"
+ },
+ "nav": {
+  "services": "Servicios",
+  "experience": "La Experiencia",
+  "gallery": "Galería",
+  "about": "Nosotros",
+  "findus": "Dónde estamos",
+  "book": "Reservar",
+  "menu_open": "Abrir menú",
+  "menu_close": "Cerrar menú",
+  "skip": "Ir al contenido"
+ },
+ "lang_switch": {
+  "label": "Idioma",
+  "en": "EN",
+  "es": "ES",
+  "to_en": "Ver esta página en inglés",
+  "to_es": "Ver esta página en español"
+ },
+ "actions": {
+  "book_long": "Pide tu cita",
+  "book_final": "Reserva tu cita",
+  "whatsapp": "Escríbenos",
+  "book_aria": "Abre el sistema de reservas online en una pestaña nueva",
+  "whatsapp_aria": "Abre un chat de WhatsApp en una pestaña nueva",
+  "booking_micro": "Elige tu barbero · Confirmación al momento",
+  "booking_reassure": "Reservar te lleva unos dos minutos y recibes un mensaje de confirmación al terminar.",
+  "directions": "Cómo llegar",
+  "view_services": "Ver todos los servicios",
+  "view_gallery": "Ver la galería",
+  "follow": "Síguenos @thecaveforhim",
+  "back_home": "Volver al inicio"
+ },
+ "status": {
+  "open_until": "Hoy abierto hasta las {t}",
+  "closed_today": "Hoy cerrado",
+  "closed_now": "Cerrado · abre el {d} a las {t}",
+  "days_long": [
+   "lunes",
+   "martes",
+   "miércoles",
+   "jueves",
+   "viernes",
+   "sábado",
+   "domingo"
+  ],
+  "closed_word": "Cerrado",
+  "today_word": "Hoy"
+ },
+ "hero": {
+  "eyebrow": "Barbería · La Cala de Mijas, Málaga",
+  "h1_l1": "Entra en The Cave.",
+  "h1_l2": "Sal más afilado.",
+  "lead": "Cortes de precisión, diseño de barba y afeitado tradicional en Avenida Las Gardenias. Con cita previa.",
+  "rating_label": "{v} en Google",
+  "hero_alt": "Interior de la barbería The Cave en La Cala de Mijas: sillones rojos de barbero, capas negras con el logo y techo de LED hexagonal",
+  "act2_line": "Ir afilado es lo normal, no un favor.",
+  "act3_line": "Cortamos con intención.",
+  "scroll_hint": "Baja"
+ },
+ "statement": {
+  "label": "02 — The Cave",
+  "body_parts": [
+   "Hay quien viene cada tres semanas. Hay quien viene una vez, de vacaciones, y luego organiza el resto del viaje alrededor de la próxima cita. En cualquier caso el local es el mismo: ",
+   "luz tenue, un buen sillón y un barbero que pregunta qué quieres de verdad",
+   " antes de encender nada. Hacemos cortes, barbas y afeitados en La Cala de Mijas. ",
+   "Y los hacemos bien."
+  ]
+ },
+ "services_home": {
+  "label": "03 — La Carta",
+  "h2": "Qué hacemos",
+  "svc_g1": "Corte",
+  "svc_g2": "Barba",
+  "svc_g3": "Afeitado",
+  "svc_g4": "Detalle",
+  "note": "Precios desde. El precio final depende del largo del pelo, el estilo y el tiempo que requiera tu corte.",
+  "from": "desde",
+  "min": "min"
+ },
+ "experience": {
+  "label": "04 — La Experiencia",
+  "h2": "Oficio antes que prisa",
+  "pillars": [
+   {
+    "n": "01",
+    "h": "La consulta",
+    "p": "Primero preguntamos. Tu pelo, la forma de tu cabeza, cómo lo llevas un martes por la mañana. Después empezamos."
+   },
+   {
+    "n": "02",
+    "h": "El corte",
+    "p": "Máquina, tijera y navaja, en el orden que pida el corte. Degradados limpios y líneas bien marcadas."
+   },
+   {
+    "n": "03",
+    "h": "El acabado",
+    "p": "Toalla caliente, producto elegido para tu pelo y no para la estantería, y un acabado que puedes repetir en casa."
+   },
+   {
+    "n": "04",
+    "h": "El local",
+    "p": "Luz tenue, cuero rojo y sin prisas. El tiempo que reservas es tuyo."
+   }
+  ],
+  "quote": "Un buen corte sigue estando bien el día diecinueve.",
+  "room_alt": "Sillones de barbero de cuero rojo y capas con el logo bajo el techo de LED hexagonal de The Cave",
+  "consult_slot_label": "IMG-EXP-01 — barbero y cliente hablando antes del corte · 4:5",
+  "page_intro": "Un corte aquí son cuarenta y cinco minutos con un objetivo. Así funciona el sillón.",
+  "page_video_note": "Grabado dentro del local.",
+  "poster_alt": "Perfilado a navaja a un cliente en la barbería The Cave de La Cala de Mijas",
+  "consult_alt": "Barberos y cliente hablando en el sillón antes del corte en The Cave"
+ },
+ "break": {
+  "statement": "El buen arreglo nunca pasa de moda.",
+  "alt": "Fachada de la barbería The Cave y mural de Londres pintado en Avenida Las Gardenias, La Cala de Mijas"
+ },
+ "barbers": {
+  "label": "06 — Los Sillones",
+  "h2": "Los barberos",
+  "role": "Barbero",
+  "book_with": "Reserva con {name}"
+ },
+ "work": {
+  "label": "07 — El Trabajo",
+  "h2": "Míralo de cerca",
+  "captions": {
+   "work-01": "Degradado a piel, cuadrado en la sien",
+   "work-02": "Corte texturizado sobre barba degradada",
+   "work-03": "Flequillo texturizado con degradado bajo",
+   "work-04": "Rizos perfilados sobre un taper",
+   "work-05": "Trabajo a tijera y nuca limpia",
+   "work-06": "Degradado bajo, fundido a piel"
+  },
+  "tile_aria": "Abre este corte en Instagram en una pestaña nueva"
+ },
+ "social": {
+  "label": "08 — Redes",
+  "h2": "Desde dentro de The Cave",
+  "line": "Todos los cortes de esta página se hicieron aquí.",
+  "drag": "Arrastra",
+  "alts": [
+   "Flequillo texturizado con degradado bajo en la barbería The Cave",
+   "Degradado con la parte de arriba rizada en la barbería The Cave",
+   "Sillones rojos de barbero y capas con el logo dentro de The Cave",
+   "Degradado a piel de perfil en la barbería The Cave"
+  ]
+ },
+ "findus": {
+  "label": "09 — Dónde Estamos",
+  "h2": "Encuentra The Cave",
+  "hours_h": "Horario",
+  "contact_h": "Contacto",
+  "storefront_alt": "Cartel de entrada de la barbería The Cave en Avenida Las Gardenias, La Cala de Mijas",
+  "plus_code": "Código Plus",
+  "page_note": "La barbería está dentro del local de London and Co., en Av. Las Gardenias. Busca el cartel negro de The Cave."
+ },
+ "final": {
+  "h2": "¿Listo para tu próximo corte?",
+  "line": "Elige servicio, elige barbero y elige hora."
+ },
+ "footer": {
+  "descriptor": "Barbería en La Cala de Mijas, hecha con intención.",
+  "col_visit": "Visítanos",
+  "col_contact": "Contacto",
+  "col_hours": "Horario",
+  "sister_line": "Parte de London and Co., La Cala de Mijas",
+  "privacy": "Privacidad",
+  "cookies": "Cookies",
+  "careers": "Empleo",
+  "attributes_line": "En Google figuramos como negocio LGBTQ+ friendly y dirigido por mujeres."
+ },
+ "services_page": {
+  "h1": "La Carta",
+  "intro": "Todos los precios son precios desde, tomados de nuestro sistema de reservas. La duración es el tiempo que te reservamos.",
+  "note": "Precios desde. El precio final depende del largo del pelo, el estilo y el tiempo que requiera tu corte.",
+  "th_service": "Servicio",
+  "th_time": "Duración",
+  "th_from": "Desde",
+  "group_names": {
+   "cuts": "Cortes",
+   "beard": "Barba",
+   "cut-beard": "Corte y barba",
+   "shave": "Afeitado",
+   "detail": "Detalle y estética"
+  },
+  "svc_alts": {
+   "svc-cut": "Degradado a piel en proceso en la barbería The Cave de La Cala de Mijas",
+   "svc-beard": "Barba degradada y perfilada en la barbería The Cave",
+   "svc-shave": "Afeitado a navaja con el cliente reclinado en The Cave",
+   "svc-detail": "Nuca rematada limpia tras un corte a tijera en The Cave",
+   "svc-combo": "Degradado rematado y línea de barba perfilada en la misma sesión en The Cave"
+  },
+  "eyebrow": "La Carta"
+ },
+ "gallery_page": {
+  "h1": "El Trabajo",
+  "intro": "Cortes, degradados y barbas de nuestros propios sillones. Nada preparado, nada prestado.",
+  "outro": "Y hay mucho más de donde salió esto."
+ },
+ "about_page": {
+  "h1": "The Cave, La Cala de Mijas",
+  "p1": "The Cave es la barbería masculina de Av. Las Gardenias, dentro del local de London and Co. Aquí vienes a cortarte, a diseñarte la barba, a afeitarte a navaja y a arreglarte.",
+  "p2": "El local no tiene pérdida: techo de LED hexagonal, sillones rojo intenso y capas negras con el logo. Dos barberos cogen cita por nombre, Gabriel e Ygor. Tú eliges barbero al reservar.",
+  "p3": "La mayoría de nuestros clientes viven entre Mijas Costa y Marbella. Muchos están de vacaciones y reservan antes de volar de vuelta.",
+  "attributes_intro": "En la ficha de Google figuramos como negocio LGBTQ+ friendly y dirigido por mujeres.",
+  "rating_line": "{v} en Google con {c} reseñas.",
+  "cta_line": "El sillón convence solo.",
+  "eyebrow": "Nosotros"
+ },
+ "careers_page": {
+  "h1": "Trabaja en The Cave",
+  "p1": "Contratamos barberos a los que les importa más el acabado que el reloj. Si te suena, preséntate.",
+  "p2": "Cuéntanos en unas líneas quién eres y dónde podemos ver tu trabajo. Contestamos a todo el mundo.",
+  "f_name": "Tu nombre",
+  "f_phone": "Teléfono o WhatsApp",
+  "f_msg": "Sobre ti y tu trabajo",
+  "f_msg_hint": "Dónde cortas ahora y dónde podemos ver tu trabajo, por ejemplo tu cuenta de Instagram.",
+  "f_submit": "Redactar correo de solicitud",
+  "f_note": "El botón abre tu aplicación de correo con la solicitud dirigida a nosotros. Esta web no guarda nada.",
+  "f_error_required": "Escribe tu nombre y unas líneas sobre ti.",
+  "f_ok": "Se está abriendo tu aplicación de correo con la solicitud. Envíala cuando quieras.",
+  "f_subject": "Candidatura — The Cave",
+  "eyebrow": "Empleo"
+ },
+ "legal_privacy": {
+  "h1": "Privacidad",
+  "updated": "Última actualización: agosto de 2026",
+  "sections": [
+   {
+    "h": "Quiénes somos",
+    "p": "Esta web pertenece a The Cave, barbería que opera dentro de London and Co., Av. Las Gardenias 9, local 1, Jardín Botánico, Mijas Costa, Málaga 29649, España. Contacto: thelondonandco@gmail.com."
+   },
+   {
+    "h": "Qué recoge esta web",
+    "p": "Nada. Esta web no tiene analítica, ni píxeles de seguimiento, ni etiquetas de marketing, ni formularios que nos envíen datos a nosotros o a terceros. La página de empleo redacta un correo en tu propia aplicación; esta web no guarda ni transmite nada."
+   },
+   {
+    "h": "Registros del servidor",
+    "p": "La empresa que aloja esta web puede conservar registros técnicos de acceso, como la dirección IP y la hora de la petición, por seguridad. No los usamos para identificarte."
+   },
+   {
+    "h": "Servicios externos que puedes abrir",
+    "p": "Las reservas funcionan con Shortcuts Software, un sistema externo con su propia política de privacidad. Los enlaces a WhatsApp, Instagram, Facebook y Google Maps te llevan a esos servicios, que tratan los datos según sus propias políticas. No se carga nada de ellos hasta que haces clic."
+   },
+   {
+    "h": "Tus derechos",
+    "p": "Conforme al RGPD puedes pedirnos qué datos personales tuyos tenemos y solicitar su rectificación o supresión. Escribe a thelondonandco@gmail.com."
+   }
+  ]
+ },
+ "legal_cookies": {
+  "h1": "Cookies",
+  "updated": "Última actualización: agosto de 2026",
+  "sections": [
+   {
+    "h": "En resumen",
+    "p": "Esta web no utiliza cookies. Ninguna. Por eso no hay aviso de cookies."
+   },
+   {
+    "h": "Sin scripts de terceros",
+    "p": "En esta web no se carga analítica, ni contenido incrustado de redes sociales, ni widgets de chat, ni etiquetas publicitarias."
+   },
+   {
+    "h": "Cuando sales de esta web",
+    "p": "El sistema de reservas, WhatsApp, Instagram, Facebook y Google Maps son servicios externos. Al abrirlos se aplican sus propias políticas de cookies."
+   },
+   {
+    "h": "Si esto cambia",
+    "p": "Si algún día añadimos un servicio que necesite cookies, primero aparecerán esta página y un aviso de consentimiento. El consentimiento será una elección real, con rechazar tan fácil como aceptar."
+   }
+  ]
+ },
+ "notfound": {
+  "code": "404",
+  "h1": "Este pasillo no lleva a ninguna parte.",
+  "p": "La página que buscas no está aquí. Los sillones sí.",
+  "find": "Encuentra The Cave"
+ },
+ "a11y": {
+  "nav_main": "Principal",
+  "nav_menu": "Menú",
+  "logo_home": "{brand} — inicio",
+  "logo_alt": "{brand} — Barbería, La Cala",
+  "instagram": "{brand} en Instagram",
+  "facebook": "{brand} en Facebook"
+ },
+ "legal_eyebrow": "Legal"
+}

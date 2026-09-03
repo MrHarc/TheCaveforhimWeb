@@ -1,0 +1,25 @@
+# Static deploy. The site is prebuilt by src/make-dist.sh and committed/uploaded
+# as dist/ — Netlify runs no build of its own (no Python on the image by default).
+[build]
+  publish = "dist"
+  command = ""
+
+# Showcase guard: keep the preview out of search results so it cannot compete
+# with the production domain. Delete this block when this becomes the real site.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    X-Robots-Tag = "noindex, nofollow"
+    X-Content-Type-Options = "nosniff"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+
+# Fingerprinted CSS/JS are served with ?v=<hash>; the files themselves are stable.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
+[[headers]]
+  for = "/*.html"
+  [headers.values]
+    Cache-Control = "public, max-age=0, must-revalidate"

@@ -1,0 +1,13 @@
+import puppeteer from "npm:puppeteer-core@23";
+const b = await puppeteer.launch({executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless: "new", args: ["--hide-scrollbars"]});
+const p = await b.newPage();
+await p.setViewport({width: 1440, height: 900});
+await p.goto("http://localhost:4780/?noanim=1&h=" + Date.now(), {waitUntil: "domcontentloaded", timeout: 60000});
+await new Promise(r => setTimeout(r, 1500));
+await p.evaluate(() => scrollTo(0, 900));
+await new Promise(r => setTimeout(r, 700));
+await p.screenshot({path: "hdr-big.png", clip: {x: 0, y: 0, width: 1440, height: 200}});
+await p.evaluate(() => scrollTo(0, 0));
+await new Promise(r => setTimeout(r, 500));
+await p.screenshot({path: "hdr-hero.png", clip: {x: 0, y: 0, width: 1440, height: 760}});
+await b.close(); console.log("ok");

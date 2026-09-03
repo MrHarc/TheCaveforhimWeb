@@ -1,0 +1,313 @@
+{
+ "_comment": "SINGLE SOURCE OF TRUTH for every business fact rendered on the site (UI + JSON-LD). Change a value here, run `python3 src/build.py`, and it updates everywhere. Do not edit facts inside HTML.",
+ "brand": "The Cave",
+ "brand_extended": "The Cave — Barbershop, La Cala de Mijas",
+ "operating_entity": "London and Co./ The Cave",
+ "site_base": "https://www.thecaveforhim.com",
+ "address": {
+  "street": "Av. Las Gardenias 9, local 1",
+  "area": "Jardín Botánico",
+  "locality": "Mijas Costa",
+  "region": "Málaga",
+  "postcode": "29649",
+  "country": "ES",
+  "display_short": "Av. Las Gardenias 9, La Cala de Mijas",
+  "display_full": "Av. Las Gardenias 9, local 1, Jardín Botánico, Mijas Costa, Málaga 29649"
+ },
+ "geo": {
+  "lat": 36.4982534,
+  "lng": -4.6884966,
+  "plus_code": "F8X6+8J"
+ },
+ "phone_display": "+34 603 555 121",
+ "phone_tel": "tel:+34603555121",
+ "_TODO_whatsapp": "CONFIRM WHATSAPP NUMBER BEFORE LAUNCH — sourced from the business phone number",
+ "whatsapp_url": "https://wa.me/34603555121?text=Hola%20The%20Cave%2C%20me%20gustar%C3%ADa%20reservar%20una%20cita",
+ "email": "thelondonandco@gmail.com",
+ "booking_url": "https://home.shortcutssoftware.com/londonandcoandthecave",
+ "directions_url": "https://www.google.com/maps/dir/?api=1&destination=36.4982534,-4.6884966",
+ "map_url": "https://www.google.com/maps/search/?api=1&query=36.4982534,-4.6884966",
+ "instagram": "https://www.instagram.com/thecaveforhim/",
+ "instagram_handle": "@thecaveforhim",
+ "facebook": "https://www.facebook.com/thecaveforhim",
+ "sister": {
+  "name": "London and Co.",
+  "url": "http://www.londonandcolacala.com/"
+ },
+ "rating": {
+  "_comment": "GOOGLE RATING CONSTANTS — the only place these numbers live. Verified 2026-08-12 against the live Google listing. CONFIRM ON LAUNCH DAY and update here; the UI renders from these values. AggregateRating is intentionally NOT in the JSON-LD until the owner confirms the live figure at launch (see README).",
+  "value": "4.7",
+  "count": 84,
+  "source": "Google",
+  "verified": "2026-08-12"
+ },
+ "hours": {
+  "_comment": "Source: the official booking system (home.shortcutssoftware.com/londonandcoandthecave). OWNER MUST CONFIRM MONDAY: the old Spanish site said 'Lunes CERRADO', the booking system says Monday 10:00-18:30, the shopfront sign reads 'Martes-Viernes'. Update here AND nothing else; build propagates to UI + JSON-LD.",
+  "week": [
+   {
+    "d": "mon",
+    "open": "10:00",
+    "close": "18:30"
+   },
+   {
+    "d": "tue",
+    "open": "10:00",
+    "close": "18:30"
+   },
+   {
+    "d": "wed",
+    "open": "10:00",
+    "close": "18:30"
+   },
+   {
+    "d": "thu",
+    "open": "10:00",
+    "close": "18:30"
+   },
+   {
+    "d": "fri",
+    "open": "10:00",
+    "close": "18:30"
+   },
+   {
+    "d": "sat",
+    "open": "10:00",
+    "close": "16:00"
+   },
+   {
+    "d": "sun",
+    "open": null,
+    "close": null
+   }
+  ]
+ },
+ "barbers": [
+  "Gabriel",
+  "Ygor"
+ ],
+ "attributes_google": [
+  "LGBTQ+ friendly",
+  "Women-owned"
+ ],
+ "service_groups": [
+  {
+   "id": "cuts",
+   "name_en": "Cuts",
+   "services": [
+    {
+     "en": "Gent Cut",
+     "es": "Corte caballero",
+     "min": 30,
+     "from": 18
+    },
+    {
+     "en": "Skin Fade or Taper Fade",
+     "es": "Corte degradado",
+     "min": 45,
+     "from": 21
+    },
+    {
+     "en": "Gent Cut Restyle",
+     "es": "Corte caballero restyle",
+     "min": 60,
+     "from": 25
+    },
+    {
+     "en": "VIP Hair Cut",
+     "es": "Corte de cabello VIP",
+     "min": 45,
+     "from": 40
+    },
+    {
+     "en": "Kids Cut",
+     "es": "Corte niño",
+     "min": 30,
+     "from": 15
+    },
+    {
+     "en": "Kids Skin Fade",
+     "es": "Niño degradado",
+     "min": 30,
+     "from": 18
+    }
+   ],
+   "name_es": "Cortes"
+  },
+  {
+   "id": "beard",
+   "name_en": "Beard",
+   "services": [
+    {
+     "en": "Beard Trim",
+     "es": "Recorte de barba",
+     "min": 15,
+     "from": 10
+    },
+    {
+     "en": "Beard Design",
+     "es": "Diseño barba",
+     "min": 30,
+     "from": 15
+    },
+    {
+     "en": "Beard Design with Hot Towel",
+     "es": "Diseño barba toalla caliente",
+     "min": 30,
+     "from": 20
+    }
+   ],
+   "name_es": "Barba"
+  },
+  {
+   "id": "cut-beard",
+   "name_en": "Cut and Beard",
+   "services": [
+    {
+     "en": "Gent Cut and Beard Design",
+     "es": "Corte y barba",
+     "min": 60,
+     "from": 33
+    },
+    {
+     "en": "VIP Gent Cut and Beard Design",
+     "es": "Corte y diseño barba VIP",
+     "min": 60,
+     "from": 55
+    }
+   ],
+   "name_es": "Corte y barba"
+  },
+  {
+   "id": "shave",
+   "name_en": "Shave",
+   "services": [
+    {
+     "en": "Traditional Shave",
+     "es": "Afeitado tradicional",
+     "min": 45,
+     "from": 28
+    },
+    {
+     "en": "Head Shave with Cut-Throat Razor",
+     "es": "Rasurado de cabeza con navaja",
+     "min": 45,
+     "from": 25
+    }
+   ],
+   "name_es": "Afeitado"
+  },
+  {
+   "id": "detail",
+   "name_en": "Detail and Grooming",
+   "services": [
+    {
+     "en": "Eyebrow Shape",
+     "es": "Diseño de cejas",
+     "min": 30,
+     "from": 5
+    },
+    {
+     "en": "Ear Wax",
+     "es": "Depilación de orejas",
+     "min": 5,
+     "from": 7
+    },
+    {
+     "en": "Lip Wax",
+     "es": "Depilación de labio",
+     "min": 5,
+     "from": 7
+    },
+    {
+     "en": "Chin Wax",
+     "es": "Depilación de mentón",
+     "min": 15,
+     "from": 7
+    },
+    {
+     "en": "Face Sides Wax",
+     "es": "Depilación de laterales de la cara",
+     "min": 15,
+     "from": 10
+    },
+    {
+     "en": "Full Face Wax",
+     "es": "Depilación facial completa",
+     "min": 30,
+     "from": 25
+    },
+    {
+     "en": "Chest Wax",
+     "es": "Depilación de pecho",
+     "min": 30,
+     "from": 25
+    },
+    {
+     "en": "Chest and Shoulder Wax",
+     "es": "Depilación de pecho y hombros",
+     "min": 20,
+     "from": 35
+    },
+    {
+     "en": "Back Wax",
+     "es": "Depilación de espalda",
+     "min": 30,
+     "from": 25
+    },
+    {
+     "en": "Full Arm Wax",
+     "es": "Depilación de brazos",
+     "min": 30,
+     "from": 18
+    }
+   ],
+   "name_es": "Detalle y estética"
+  }
+ ],
+ "home_groups": [
+  {
+   "label_key": "svc_g1",
+   "num": "01",
+   "group_ids": [
+    "cuts",
+    "cut-beard"
+   ]
+  },
+  {
+   "label_key": "svc_g2",
+   "num": "02",
+   "group_ids": [
+    "beard"
+   ]
+  },
+  {
+   "label_key": "svc_g3",
+   "num": "03",
+   "group_ids": [
+    "shave"
+   ]
+  },
+  {
+   "label_key": "svc_g4",
+   "num": "04",
+   "group_ids": [
+    "detail"
+   ]
+  }
+ ],
+ "gallery_posts": {
+  "_comment": "Instagram post permalinks for each real photograph currently in /assets/img (interim web-resolution exports pulled from the official account's public embeds on 2026-08-12). Owner should replace files with full-resolution originals from the camera roll — same filenames, zero design changes. See README.",
+  "cave-hero": "https://www.instagram.com/thecaveforhim/reel/DCPO5U6M1sN/",
+  "cave-hero-mobile": "https://www.instagram.com/thecaveforhim/reel/DCPO5U6M1sN/",
+  "experience-room": "https://www.instagram.com/thecaveforhim/reel/DCPO5U6M1sN/",
+  "svc-cut": "https://www.instagram.com/thecaveforhim/p/DXYl5lyDNCD/",
+  "svc-beard": "https://www.instagram.com/thecaveforhim/p/DVbU0tXjA6b/",
+  "svc-detail": "https://www.instagram.com/thecaveforhim/p/DXbLr1GjFh6/",
+  "work-01": "https://www.instagram.com/thecaveforhim/p/DXYl5lyDNCD/",
+  "work-02": "https://www.instagram.com/thecaveforhim/p/DVbU0tXjA6b/",
+  "work-03": "https://www.instagram.com/thecaveforhim/p/DWHkomCDPGq/",
+  "work-04": "https://www.instagram.com/thecaveforhim/p/DVftsnsjG00/",
+  "work-05": "https://www.instagram.com/thecaveforhim/p/DXbLr1GjFh6/",
+  "work-06": "https://www.instagram.com/thecaveforhim/p/DVbU0tXjA6b/"
+ }
+}

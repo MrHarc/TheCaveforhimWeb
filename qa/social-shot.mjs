@@ -1,0 +1,10 @@
+import puppeteer from "npm:puppeteer-core@23";
+const b = await puppeteer.launch({executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless: "new", args: ["--hide-scrollbars"]});
+const p = await b.newPage();
+await p.setViewport({width: 1600, height: 1000});
+await p.goto("http://localhost:4780/?noanim=1&s=" + Date.now(), {waitUntil: "domcontentloaded", timeout: 60000});
+await new Promise(r => setTimeout(r, 1800));
+await p.evaluate(() => { document.querySelector("#social").scrollIntoView({block: "start"}); scrollBy(0, -120); });
+await new Promise(r => setTimeout(r, 1000));
+await p.screenshot({path: "sec-social-now.png"});
+await b.close(); console.log("ok");

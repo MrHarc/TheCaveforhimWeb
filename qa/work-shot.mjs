@@ -1,0 +1,11 @@
+import puppeteer from "npm:puppeteer-core@23";
+const b = await puppeteer.launch({executablePath: "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome", headless: "new", args: ["--hide-scrollbars"]});
+const p = await b.newPage();
+await p.setViewport({width: 1440, height: 1600});
+await p.goto("http://localhost:4780/?noanim=1&q=" + Date.now(), {waitUntil: "domcontentloaded", timeout: 60000});
+await new Promise(r => setTimeout(r, 1800));
+await p.evaluate(() => document.querySelector("#work").scrollIntoView({block: "start"}));
+await new Promise(r => setTimeout(r, 1200));
+await p.screenshot({path: "sec-work-6tiles.png"});
+console.log("shot", await p.evaluate(() => scrollY));
+await b.close();

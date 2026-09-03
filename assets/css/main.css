@@ -1,0 +1,798 @@
+/* ============================================================
+   THE CAVE — deferred stylesheet (everything below the fold)
+   Colours only via tokens declared in critical.css.
+   ============================================================ */
+
+main { display: block; }
+
+.sec { position: relative; padding-block: var(--pad-sec); }
+.sec--charcoal { background: var(--cave-charcoal); }
+/* Formerly a full cream field. A dark room lit by its own photographs is the
+   identity; flipping to paper mid-scroll read as a different website. The
+   section keeps its job — a change of ground so the page has a rhythm — but
+   stays in the register, one warm step above charcoal. */
+.sec--ivory { background: var(--cave-umber); color: var(--cave-bone); }
+
+/* The number used to sit on the heading's baseline, which dropped it beside a
+   60px cap and pushed the heading off the gutter. Stacked instead: label,
+   heading, rule — all flush left, so every section opens on the same line. */
+.sec-head { display: grid; justify-items: start; gap: 20px; margin-bottom: clamp(3rem, 8vh, 6rem); }
+.sec-head .num { white-space: nowrap; }
+.sec-head h2 { font-size: var(--fs-h2); }
+.sec-head .rule { height: 1px; width: 100%; background: var(--cave-hairline); }
+.sec--ivory .num, .sec--ivory .label { color: var(--cave-stone); }
+
+/* rotated margin numbers on very wide screens */
+@media (min-width: 1440px) {
+  .sec-num-side {
+    position: absolute; left: 20px; top: var(--pad-sec);
+    writing-mode: vertical-rl; transform: rotate(180deg);
+    font-family: var(--font-mono); font-size: var(--fs-number);
+    letter-spacing: 0.22em; text-transform: uppercase; color: var(--cave-stone);
+  }
+}
+@media (max-width: 1439px) { .sec-num-side { display: none; } }
+
+.rule-bleed { height: 1px; background: var(--cave-hairline); width: 100%; }
+
+/* --- 02 brand statement --- */
+.statement { text-align: left; max-width: 62ch; margin-inline: auto; }
+.statement .num { display: block; margin-bottom: 28px; }
+.statement p { font-size: var(--fs-lead); line-height: 1.7; color: var(--cave-stone); }
+/* Copper mid-sentence turned the paragraph into a highlighter pass. The lift is
+   carried by brightness instead — the emphasised clause is simply the part of
+   the sentence that is fully lit. */
+.statement p .lift { color: var(--cave-ivory); }
+
+/* --- 03 services --- */
+.svc-layout { display: grid; gap: 48px; }
+@media (min-width: 900px) {
+  .svc-layout { grid-template-columns: 4fr 8fr; gap: clamp(48px, 6vw, 96px); }
+  .svc-left { position: sticky; top: 132px; align-self: start; }
+}
+.svc-left .num { display: block; margin-bottom: 20px; }
+.svc-left h2 { font-size: var(--fs-h2); font-weight: 600; margin-bottom: 32px; }
+.svc-left .btn { margin-top: 8px; }
+
+.svc-group { border-top: 1px solid var(--cave-hairline); }
+.svc-group:last-of-type { border-bottom: 1px solid var(--cave-hairline); }
+.svc-group__head {
+  width: 100%; display: flex; align-items: center; gap: 20px;
+  padding: 22px 4px; text-align: left;
+}
+.svc-group__head .num { min-width: 3ch; }
+.svc-group__head .g-name {
+  font-family: var(--font-display); font-size: var(--fs-h3); font-weight: 600;
+  text-transform: uppercase; letter-spacing: -0.01em; line-height: 1;
+}
+.svc-group__head .g-cross { margin-left: auto; position: relative; width: 14px; height: 14px; }
+.svc-group__head .g-cross::before, .svc-group__head .g-cross::after {
+  content: ""; position: absolute; background: var(--cave-brass); transition: transform 240ms var(--ease);
+}
+.svc-group__head .g-cross::before { inset: 50% 0 auto 0; height: 1px; transform: translateY(-50%); }
+.svc-group__head .g-cross::after { inset: 0 auto 0 50%; width: 1px; transform: translateX(-50%); }
+.svc-group.open .g-cross::after { transform: translateX(-50%) scaleY(0); }
+.svc-group__panel { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 320ms var(--ease); }
+.svc-group.open .svc-group__panel { grid-template-rows: 1fr; }
+.svc-group__panel > div { overflow: hidden; }
+.no-js .svc-group__panel { grid-template-rows: 1fr; }
+@media (prefers-reduced-motion: reduce) { .svc-group__panel { transition: none; } }
+
+.svc-row {
+  display: grid; grid-template-columns: 1fr auto auto; align-items: baseline;
+  gap: 8px 20px; padding: 16px 12px; text-decoration: none;
+  border-top: 1px solid var(--cave-hairline-soft); position: relative;
+  transition: background-color 200ms var(--ease);
+}
+.svc-row:hover, .svc-row:focus-visible { background: var(--cave-graphite); }
+.svc-row .s-name { font-family: var(--font-body); font-weight: 500; font-size: var(--fs-body); color: var(--cave-bone); padding-right: 20px; }
+.svc-row .s-time { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.1em; color: var(--cave-stone); text-transform: uppercase; }
+.svc-row .s-price { font-family: var(--font-mono); font-size: var(--fs-body); font-weight: 500; color: var(--cave-ivory); font-variant-numeric: tabular-nums; text-align: right; min-width: 8ch; }
+.svc-row .s-price .s-from { font-size: var(--fs-number); color: var(--cave-stone); letter-spacing: 0.08em; margin-right: 6px; text-transform: uppercase; }
+.svc-row .s-arr {
+  position: absolute; right: -8px; top: 50%; transform: translate(-8px, -50%); opacity: 0;
+  color: var(--cave-brass); transition: opacity 200ms var(--ease), transform 200ms var(--ease);
+}
+.svc-row:hover .s-arr, .svc-row:focus-visible .s-arr { opacity: 1; transform: translate(-16px, -50%); }
+@media (max-width: 599px) {
+  .svc-row { grid-template-columns: 1fr auto; }
+  .svc-row .s-time { grid-column: 1; grid-row: 2; }
+  .svc-row .s-price { grid-column: 2; grid-row: 1 / 3; align-self: center; }
+  .svc-row .s-arr { display: none; }
+}
+.svc-note { margin-top: 24px; font-size: var(--fs-small); color: var(--cave-stone); max-width: 60ch; }
+
+/* --- 04 experience --- */
+.exp { position: relative; overflow: clip; }
+.exp::before { content: ""; position: absolute; inset: 0; background: var(--cave-atmos-green); pointer-events: none; }
+.exp__grid { position: relative; display: grid; gap: 48px; }
+@media (min-width: 900px) {
+  .exp__grid { grid-template-columns: repeat(12, 1fr); align-items: stretch; }
+  .exp__media { grid-column: 1 / 6; margin-left: calc(-1 * var(--gutter)); min-height: 100%; }
+  .exp__body { grid-column: 7 / 13; }
+}
+.exp__media { display: flex; flex-direction: column; gap: 12px; }
+.exp__media picture { flex: 1; min-height: 0; display: block; }
+.exp__media img { width: 100%; height: 100%; object-fit: cover; }
+@media (max-width: 899px) { .exp__media img { height: auto; } .exp__media picture { flex: none; } }
+/* --- the experience diptych ---------------------------------------------
+   Two plates of identical size, top-aligned and centred: the section is a pair
+   of photographs, not the image-beside-text layout the rest of .exp uses. Both
+   are forced to the same 4:5 frame so they read as a matched set — the shave
+   master is 3:4 and is cropped to fit rather than being left a different shape. */
+.exp__pair { display: grid; gap: clamp(20px, 3vw, 44px); }
+@media (min-width: 900px) {
+  .exp__pair { grid-template-columns: 1fr 1fr; align-items: start; max-width: 1080px; margin-inline: auto; }
+}
+.exp__plate { margin: 0; }
+.exp__plate picture { display: block; }
+.exp__plate img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+.exp__plate .caption { margin-top: 14px; }
+.exp__body .num { display: block; margin-bottom: 20px; }
+.exp__body h2 { font-size: var(--fs-h2); font-weight: 600; margin-bottom: 16px; }
+.pillar { border-top: 1px solid var(--cave-hairline); padding-block: 32px; display: grid; grid-template-columns: 4ch 1fr; gap: 24px; }
+.pillar h3 { font-size: var(--fs-h3); font-weight: 600; margin-bottom: 10px; }
+.pillar p { max-width: 52ch; }
+.pullquote {
+  font-family: var(--font-serif); font-style: italic; font-size: var(--fs-h3);
+  line-height: 1.3; text-transform: none; letter-spacing: 0;
+  border-top: 1px solid var(--cave-hairline); padding-top: 36px; margin-top: 8px;
+  color: var(--cave-copper-300); max-width: 30ch;
+}
+
+/* --- 05 visual break --- */
+.break { position: relative; min-height: 70svh; display: grid; place-items: center; overflow: hidden; isolation: isolate; }
+.break picture, .break img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; z-index: -2; }
+.js .break img { transform: scale(1.06); }
+.js .break.in img { transform: scale(1); transition: transform 1200ms var(--ease); }
+.break::after { content: ""; position: absolute; inset: 0; background: var(--cave-scrim-45); z-index: -1; }
+.break h2 { font-size: var(--fs-h1); color: var(--cave-ivory); text-align: center; padding: 15vh var(--gutter); max-width: 18ch; }
+@media (prefers-reduced-motion: reduce) { .js .break img { transform: none; transition: none; } }
+
+/* --- 06 barbers --- */
+.barbers__grid { display: grid; gap: clamp(40px, 6vw, 88px); }
+@media (min-width: 600px) { .barbers__grid { grid-template-columns: 1fr 1fr; } }
+/* Two boxed rectangles holding a name each were mostly empty ruled space. The
+   box is gone: a hairline opens the entry and the name sits directly on the
+   page, which is what the section actually has to show. */
+.barber-card {
+  border: 0; border-top: 1px solid var(--cave-hairline); background: none;
+  padding: 28px 0 0; display: flex; flex-direction: column; gap: 8px; min-height: 0;
+}
+.barber-card .num { margin-bottom: 28px; }
+.barber-card h3 { font-size: var(--fs-h2); font-weight: 600; margin-top: 0; }
+.barber-card .role { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--cave-stone); }
+.barber-card .book-with {
+  margin-top: 32px; display: inline-flex; align-items: center; gap: 10px;
+  font-family: var(--font-mono); font-size: var(--fs-label); font-weight: 500;
+  letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--cave-brass);
+}
+.barber-card .book-with:hover { color: var(--cave-brass-hi); }
+.barber-card .book-with .arr { transition: transform 200ms var(--ease); }
+.barber-card .book-with:hover .arr { transform: translateX(4px); }
+
+/* --- 07 the work --- */
+.work { position: relative; overflow: clip; }
+.work::before { content: ""; position: absolute; inset: 0; background: var(--cave-atmos-indigo); pointer-events: none; }
+.work__grid { position: relative; display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(16px, 2.5vw, 32px); }
+.tile { position: relative; overflow: hidden; text-decoration: none; display: block; }
+.tile img { width: 100%; height: 100%; object-fit: cover; aspect-ratio: 3 / 4; transition: transform 520ms var(--ease); }
+.tile:hover img, .tile:focus-visible img { transform: scale(1.06); }
+.tile .cap {
+  position: absolute; inset: auto 0 0 0; padding: 14px 16px;
+  font-family: var(--font-mono); font-size: var(--fs-number); letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--cave-bone); background: var(--cave-veil);
+  opacity: 0; transform: translateY(6px); transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+}
+.tile:hover .cap, .tile:focus-visible .cap { opacity: 1; transform: none; }
+/* Three equal columns, all tiles the same width and the same 3:4 frame, so the
+   grid has one rhythm instead of six. The stagger is a single measured step
+   applied per column rather than five arbitrary margins; the life comes from
+   the scroll parallax below, not from scattering the layout. */
+@media (min-width: 900px) {
+  .work__grid {
+    --work-step: clamp(28px, 5vw, 88px);
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: clamp(20px, 2.4vw, 40px);
+    row-gap: clamp(32px, 4vw, 72px);
+    /* without this the row stretches every tile to match the tallest one in it,
+       so the column offsets would hand each column a different height */
+    align-items: start;
+  }
+  .t-1, .t-4 { grid-column: 1; margin-top: 0; }
+  .t-2, .t-5 { grid-column: 2; margin-top: var(--work-step); }
+  .t-3, .t-6 { grid-column: 3; margin-top: calc(var(--work-step) * 2); }
+}
+@media (max-width: 899px) {
+  .work__grid { grid-template-columns: 1fr; gap: clamp(30px, 8vw, 46px); }
+  .tile, .tile:nth-child(even) { width: 100%; margin-left: 0; }
+  /* a static caption sits inside the frame, so it needs clearance from the
+     bottom rule the border-image draws across the tile edge */
+  .tile .cap { position: static; opacity: 1; transform: none; background: none; padding: 12px 6px 10px; color: var(--cave-stone); }
+}
+/* The picture is the parallax layer and the img keeps the hover push, so the two
+   transforms never fight. The base scale gives the parallax room to travel
+   inside the frame without ever exposing an edge. */
+/* --- framed tiles: the pop -------------------------------------------------
+   The whole framed unit arrives as one object — frame, mount and photograph
+   together — rising a little and settling out of a slight undersize. The
+   photograph never moves independently of its frame: only .tile is animated,
+   so the picture inside is static throughout.
+   The pop comes from the scale step and a fast decelerating settle, not from a
+   bounce — an elastic overshoot would cheapen an engraved frame. The per-column
+   stagger keeps the grid from arriving all at once. */
+.js .work__grid .tile picture,
+.js .gal-grid .tile picture { display: block; overflow: hidden; }
+
+.js .work__grid .tile[data-reveal],
+.js .gal-grid .tile[data-reveal] {
+  opacity: 0;
+  transform: translateY(26px) scale(0.93);
+  transform-origin: 50% 60%;
+}
+.js .work__grid .tile[data-reveal].in,
+.js .gal-grid .tile[data-reveal].in {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 460ms var(--ease),
+    transform 680ms cubic-bezier(0.16, 1, 0.3, 1),
+    box-shadow 420ms var(--ease);
+  /* the stagger belongs to the entrance only — the frame's hover glow must not
+     inherit a delay */
+  transition-delay: calc(var(--pop-i, 0) * 105ms), calc(var(--pop-i, 0) * 105ms), 0s;
+}
+/* Stagger by column, not by document order: tiles arrive a row at a time, so
+   running the delay 0-5 down the markup would leave the last frame waiting half
+   a second after it had already entered. */
+@media (min-width: 900px) {
+  .js .work__grid .tile:nth-child(3n + 2),
+  .js .gal-grid .tile:nth-child(3n + 2) { --pop-i: 1; }
+  .js .work__grid .tile:nth-child(3n + 3),
+  .js .gal-grid .tile:nth-child(3n + 3) { --pop-i: 2; }
+}
+/* one column on phones — each frame enters alone, so it pops the moment it does */
+@media (max-width: 899px) {
+  .js .work__grid .tile[data-reveal].in,
+  .js .gal-grid .tile[data-reveal].in { transition-delay: 0s; }
+}
+.work__cta { margin-top: clamp(3rem, 8vh, 6rem); display: flex; justify-content: flex-end; }
+@media (prefers-reduced-motion: reduce) { .tile img { transition: none; } }
+
+/* --- 08 social strip --- */
+.social h2 { font-size: var(--fs-h1); font-weight: 700; margin-bottom: 12px; }
+.social__line { color: var(--cave-stone); max-width: 52ch; }
+.social__head { margin-bottom: clamp(2rem, 5vh, 4rem); }
+.strip {
+  display: flex; gap: clamp(20px, 2.5vw, 32px);
+  padding-block: 4px;
+  overflow-x: auto; scroll-snap-type: x mandatory;
+  padding-inline: max(var(--gutter), calc((100vw - 1440px) / 2 + var(--gutter)));
+  padding-bottom: 12px; cursor: grab; scrollbar-width: none;
+}
+.strip::-webkit-scrollbar { display: none; }
+.strip.dragging { cursor: grabbing; scroll-snap-type: none; }
+.strip__item {
+  flex: 0 0 min(68vw, 360px); scroll-snap-align: start;
+  aspect-ratio: 4 / 5; overflow: hidden;
+}
+.strip__item picture { width: 100%; height: 100%; display: block; }
+.strip__item img { width: 100%; height: 100%; object-fit: cover; }
+.social__cta { margin-top: 40px; }
+
+/* cursor label (gallery + strip, fine pointers only) */
+.cursor-label {
+  position: fixed; z-index: 120; pointer-events: none;
+  font-family: var(--font-mono); font-size: var(--fs-number); letter-spacing: 0.22em; text-transform: uppercase;
+  background: var(--cave-ivory); color: var(--cave-obsidian); padding: 6px 10px;
+  transform: translate(-50%, -140%); opacity: 0; transition: opacity 200ms var(--ease);
+}
+.cursor-label.on { opacity: 1; }
+@media (pointer: coarse) { .cursor-label { display: none; } }
+
+/* --- 09 find us --- */
+.find__grid { display: grid; gap: 48px; }
+@media (min-width: 900px) { .find__grid { grid-template-columns: 1fr 1fr; align-items: start; } }
+.find address { font-style: normal; font-size: var(--fs-lead); line-height: 1.5; max-width: 30ch; }
+.find .label { display: block; margin: 36px 0 14px; }
+.hours { width: 100%; border-collapse: collapse; font-family: var(--font-mono); font-size: var(--fs-small); }
+.hours caption { text-align: left; }
+.hours td { padding: 10px 0; border-bottom: 1px solid var(--cave-hairline-soft); color: var(--cave-stone); }
+.hours td:last-child { text-align: right; font-variant-numeric: tabular-nums; }
+.hours tr.today td { color: var(--cave-ivory); }
+.find__contact a { color: var(--cave-bone); text-decoration: underline; text-decoration-color: var(--cave-brass); text-underline-offset: 4px; text-decoration-thickness: 1px; }
+.find__contact a:hover { color: var(--cave-brass-hi); }
+.find__contact li { list-style: none; padding: 6px 0; }
+.find__media img { width: 100%; height: auto; }
+.find__media .caption { margin-top: 12px; }
+.find .btn { margin-top: 32px; }
+.status-line { display: inline-flex; align-items: center; margin-top: 10px; font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--cave-stone); }
+
+/* --- 10 final cta --- */
+/* Two saturated copper rules boxed the closing section in like a coupon. A
+   single hairline opens it and the footer's own rule closes it. */
+.final { text-align: center; padding-block: clamp(6.5rem, 14vh, 10rem) clamp(5rem, 10vh, 7.5rem); border-top: 1px solid var(--cave-hairline); }
+.final h2 { font-size: var(--fs-h1); max-width: 22ch; margin-inline: auto; text-wrap: balance; }
+.final p { margin: 26px auto 44px; color: var(--cave-stone); max-width: 40ch; font-size: var(--fs-lead); }
+.final__cta { display: flex; flex-wrap: wrap; gap: 14px; justify-content: center; align-items: center; }
+.final .reassure { margin-top: 28px; font-size: var(--fs-small); color: var(--cave-stone); max-width: 40ch; margin-inline: auto; }
+
+/* --- footer --- */
+.ftr { border-top: 1px solid var(--cave-hairline); padding-block: clamp(3rem, 8vh, 5rem) 2rem; }
+.ftr__grid { display: grid; gap: 40px; }
+@media (min-width: 600px) { .ftr__grid { grid-template-columns: 1fr 1fr; } }
+@media (min-width: 1000px) { .ftr__grid { grid-template-columns: 2fr 1fr 1fr 1fr; } }
+.ftr__brand img { height: 32px; width: auto; margin-bottom: 16px; }
+.ftr__brand p { color: var(--cave-stone); font-size: var(--fs-small); max-width: 30ch; }
+.ftr h4 { font-family: var(--font-mono); font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; color: var(--cave-stone); margin-bottom: 18px; }
+.ftr ul { list-style: none; }
+.ftr li { padding: 4px 0; font-size: var(--fs-small); }
+.ftr a { color: var(--cave-bone); text-decoration: none; }
+.ftr a:hover { color: var(--cave-brass-hi); text-decoration: underline; text-underline-offset: 4px; }
+.ftr address { font-style: normal; font-size: var(--fs-small); line-height: 1.7; }
+.ftr .hours-mini { font-family: var(--font-mono); font-size: var(--fs-small); color: var(--cave-bone); }
+.ftr .hours-mini span { color: var(--cave-stone); }
+.ftr__base {
+  margin-top: 56px; padding-top: 24px; border-top: 1px solid var(--cave-hairline-soft);
+  display: flex; flex-wrap: wrap; gap: 16px 28px; align-items: center;
+  font-size: var(--fs-small); color: var(--cave-stone);
+}
+.ftr__base .spacer { flex: 1; }
+.ftr__base a { color: var(--cave-stone); }
+.ftr__base a:hover { color: var(--cave-brass-hi); }
+.ftr__social { display: flex; gap: 16px; }
+.ftr__social a { display: inline-flex; padding: 8px; color: var(--cave-stone); }
+.ftr__social a:hover { color: var(--cave-brass-hi); }
+.ftr .attributes { font-size: var(--fs-small); color: var(--cave-stone); margin-top: 14px; }
+
+/* --- generic inner pages --- */
+.page-head { padding-block: calc(116px + clamp(4rem, 10vh, 7rem)) clamp(3rem, 7vh, 5rem); }
+.page-head .num { display: block; margin-bottom: 20px; }
+.page-head h1 { font-size: var(--fs-h1); max-width: 12ch; }
+.page-head .intro { margin-top: 28px; max-width: 56ch; font-size: var(--fs-lead); color: var(--cave-stone); }
+
+/* services page tables */
+.menu-group { margin-bottom: clamp(3rem, 8vh, 5rem); display: grid; gap: 32px; }
+/* align-items: start keeps the media column at its own height — stretched to
+   match a long price table it would leave dead space below the photograph,
+   inside the frame that wraps it */
+@media (min-width: 900px) { .menu-group { grid-template-columns: 5fr 7fr; align-items: start; } }
+.menu-group__media img { width: 100%; height: auto; aspect-ratio: 3 / 4; object-fit: cover; }
+@media (min-width: 900px) { .menu-group__media { max-width: 380px; } }
+.menu-table { width: 100%; border-collapse: collapse; }
+.menu-table caption { text-align: left; font-family: var(--font-display); font-size: var(--fs-h3); font-weight: 600; text-transform: uppercase; padding-bottom: 18px; }
+.menu-table caption .num { margin-right: 14px; }
+.menu-table th { font-family: var(--font-mono); font-size: var(--fs-number); font-weight: 400; letter-spacing: 0.22em; text-transform: uppercase; color: var(--cave-stone); text-align: left; padding: 0 12px 10px 0; border-bottom: 1px solid var(--cave-hairline); }
+.menu-table th:last-child, .menu-table td:last-child { text-align: right; padding-right: 0; }
+.menu-table td { padding: 14px 12px 14px 0; border-bottom: 1px solid var(--cave-hairline-soft); }
+.menu-table td.t-time { font-family: var(--font-mono); font-size: var(--fs-label); color: var(--cave-stone); white-space: nowrap; }
+.menu-table td.t-price { font-family: var(--font-mono); font-weight: 500; color: var(--cave-ivory); font-variant-numeric: tabular-nums; white-space: nowrap; }
+.menu-table td.t-price .s-from { font-size: var(--fs-number); color: var(--cave-stone); margin-right: 6px; text-transform: uppercase; }
+
+.tile img, .strip__item img, .menu-group__media img {
+  filter: brightness(0.9) saturate(0.94);
+  transition: transform 520ms var(--ease), filter 520ms var(--ease);
+}
+.tile:hover img, .tile:focus-visible img,
+.strip__item:hover img, .menu-group__media:hover img {
+  filter: brightness(1) saturate(1);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile img, .strip__item img, .menu-group__media img { transition: none; }
+}
+
+/* --- photographs -------------------------------------------------------
+   Every print used to carry a 9-slice engraved copper frame and a warm bloom.
+   An ornament that elaborate on every image is the opposite of the room it is
+   selling: it fenced each photograph in and put the most saturated colour on
+   the page around content that is already the strongest thing on it.
+   What is left is a hairline drawn just inside the edge — enough to seat the
+   picture on the ground, nothing that competes with it. */
+.tile,
+.menu-group__media,
+.strip__item,
+.exp__media picture,
+.exp__plate picture,
+.find__media picture,
+.about-media picture {
+  box-shadow: inset 0 0 0 1px var(--cave-hairline-soft);
+  transition: box-shadow 420ms var(--ease);
+}
+.find__media picture, .about-media picture { display: block; }
+/* the hover lift is the same hairline coming up, not a halo switching on */
+.tile:hover, .tile:focus-visible,
+.menu-group__media:hover,
+.strip__item:hover {
+  box-shadow: inset 0 0 0 1px var(--cave-hairline);
+}
+@media (prefers-reduced-motion: reduce) {
+  .tile, .menu-group__media, .strip__item,
+  .exp__media picture, .exp__plate picture, .find__media picture, .about-media picture { transition: none; }
+}
+
+/* placeholder slots (§7c) */
+.ph {
+  background: var(--cave-charcoal);
+  box-shadow: inset 0 0 0 1px var(--cave-hairline-soft);
+  display: grid; place-items: center; text-align: center; padding: 24px; width: 100%;
+}
+.ph .num { line-height: 1.8; letter-spacing: 0.18em; }
+.sec--ivory .ph .num { color: var(--cave-stone); }
+
+/* gallery page */
+/* same rhythm as the work grid: equal columns, one measured step per column */
+.gal-grid { display: grid; grid-template-columns: repeat(12, 1fr); gap: clamp(16px, 2.5vw, 32px); }
+@media (min-width: 900px) {
+  .gal-grid {
+    --work-step: clamp(28px, 5vw, 88px);
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: clamp(20px, 2.4vw, 40px);
+    row-gap: clamp(32px, 4vw, 72px);
+    align-items: start;
+  }
+  .g-1, .g-4 { grid-column: 1; margin-top: 0; }
+  .g-2, .g-5 { grid-column: 2; margin-top: var(--work-step); }
+  .g-3, .g-6 { grid-column: 3; margin-top: calc(var(--work-step) * 2); }
+}
+@media (max-width: 899px) {
+  .gal-grid { grid-template-columns: 1fr; gap: clamp(30px, 8vw, 46px); }
+  .gal-grid .tile, .gal-grid .tile:nth-child(even) { width: 100%; margin-left: 0; }
+}
+
+/* about page */
+.about-body { display: grid; gap: 48px; padding-bottom: var(--pad-sec); }
+@media (min-width: 900px) { .about-body { grid-template-columns: 7fr 5fr; align-items: start; } }
+.about-media img { width: 100%; height: auto; aspect-ratio: 4 / 5; object-fit: cover; }
+@media (min-width: 900px) {
+  .about-media { max-width: 420px; justify-self: end; position: sticky; top: 132px; }
+}
+.about-body .prose p { max-width: 62ch; margin-bottom: 1.4em; }
+.about-body .prose .meta-line { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; color: var(--cave-stone); margin-top: 2em; }
+.about-body .prose .meta-line a { color: var(--cave-brass); }
+
+/* careers form */
+.careers-grid { display: grid; gap: 48px; padding-bottom: var(--pad-sec); }
+@media (min-width: 900px) { .careers-grid { grid-template-columns: 5fr 7fr; } }
+.form-field { margin-bottom: 28px; }
+.form-field label { display: block; font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.18em; text-transform: uppercase; color: var(--cave-stone); margin-bottom: 10px; }
+.form-field .hint { font-size: var(--fs-small); color: var(--cave-stone); margin-top: 8px; }
+.form-field input, .form-field textarea {
+  width: 100%; background: var(--cave-graphite); border: 1px solid var(--cave-hairline);
+  color: var(--cave-bone); font-family: var(--font-body); font-size: var(--fs-body);
+  padding: 14px 16px; min-height: 48px;
+}
+.form-field textarea { min-height: 160px; resize: vertical; }
+.form-field input:focus-visible, .form-field textarea:focus-visible { outline: none; box-shadow: var(--cave-focus); }
+.form-status { margin-top: 20px; font-size: var(--fs-small); color: var(--cave-stone); min-height: 1.5em; }
+.form-status.ok { color: var(--cave-green-300); }
+.form-note { font-size: var(--fs-small); color: var(--cave-stone); margin-top: 16px; max-width: 46ch; }
+
+/* legal */
+.legal-body { max-width: 68ch; padding-bottom: var(--pad-sec); }
+.legal-body .updated { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.14em; text-transform: uppercase; color: var(--cave-stone); margin-bottom: 40px; }
+.legal-body h2 { font-size: var(--fs-h3); font-weight: 600; margin: 2.2em 0 0.6em; }
+.legal-body p { color: var(--cave-bone); }
+
+/* 404 */
+.nf { min-height: 100svh; display: grid; place-items: center; text-align: center; padding: 120px var(--gutter) 80px; }
+.nf .code { font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.22em; color: var(--cave-brass); display: block; margin-bottom: 24px; }
+.nf h1 { font-size: var(--fs-h1); max-width: 14ch; margin-inline: auto; }
+.nf p { margin: 24px 0 40px; color: var(--cave-stone); }
+.nf .final__cta { justify-content: center; }
+
+/* mobile full-screen menu */
+.mmenu {
+  position: fixed; inset: 0; z-index: 95; background: var(--cave-veil-full);
+  display: none; flex-direction: column; padding: 120px var(--gutter) 40px; overflow-y: auto;
+}
+.mmenu.open { display: flex; }
+.mmenu ol { list-style: none; }
+.mmenu li { border-bottom: 1px solid var(--cave-hairline); }
+.mmenu a.mm-link {
+  display: flex; align-items: baseline; gap: 20px; text-decoration: none;
+  font-family: var(--font-display); font-size: var(--fs-h3); font-weight: 600;
+  text-transform: uppercase; color: var(--cave-bone); padding: 22px 0;
+}
+.mmenu a.mm-link:hover { color: var(--cave-brass-hi); }
+.js .mmenu li { opacity: 0; transform: translateY(12px); }
+.js .mmenu.open li { opacity: 1; transform: none; transition: opacity 280ms var(--ease), transform 280ms var(--ease); transition-delay: calc(var(--i) * 40ms); }
+.mmenu__actions { margin-top: 40px; display: flex; flex-direction: column; gap: 14px; align-items: flex-start; }
+/* In the phone menu the switch sits with the other actions and takes a full
+   44px row, so it is a real touch target rather than two small words. */
+.mmenu .langsw { margin-top: 6px; gap: 14px; }
+.mmenu .langsw a { min-height: 44px; display: inline-flex; align-items: center; padding: 0 4px; font-size: 0.875rem; }
+.mmenu .langsw__sep { height: 14px; }
+
+.mmenu__meta { margin-top: 32px; color: var(--cave-stone); font-family: var(--font-mono); font-size: var(--fs-label); letter-spacing: 0.1em; text-transform: uppercase; line-height: 2.1; }
+.mmenu__meta a { color: var(--cave-stone); }
+.mmenu__meta a:hover { color: var(--cave-brass-hi); }
+@media (min-width: 900px) { .mmenu { display: none !important; } }
+@media (prefers-reduced-motion: reduce) { .js .mmenu li { opacity: 1; transform: none; transition: none; } }
+body.menu-locked { overflow: hidden; }
+
+/* helpers */
+.caption { font-family: var(--font-mono); font-size: var(--fs-number); letter-spacing: 0.14em; text-transform: uppercase; color: var(--cave-stone); }
+.mono-link { font-family: var(--font-mono); font-size: var(--fs-label); font-weight: 500; letter-spacing: 0.18em; text-transform: uppercase; text-decoration: none; color: var(--cave-brass); display: inline-flex; align-items: center; gap: 10px; }
+.mono-link:hover { color: var(--cave-brass-hi); }
+.mono-link .arr { transition: transform 200ms var(--ease); }
+.mono-link:hover .arr { transform: translateX(4px); }
+
+@media (prefers-contrast: more) {
+  :root { --cave-hairline: rgba(185, 176, 162, 0.4); --cave-hairline-soft: rgba(185, 176, 162, 0.24); }
+  .label, .num, .svc-row .s-time, .hours td { color: var(--cave-bone); }
+}
+
+/* ---------- scroll-scrub hero (desktop enhancement; base hero untouched) ---------- */
+.hero.scrub-on { height: calc(100vh + var(--scrub-runway, 200vh)); }
+.hero.scrub-on .hero__stage {
+  position: sticky; top: 0; height: 100vh; min-height: 0;
+}
+.hero__film { position: absolute; inset: 0; z-index: -1; opacity: 0; transition: opacity 600ms var(--ease); }
+.hero__film video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.hero.scrub-on .hero__film.is-ready { opacity: 1; }
+.hero__act1group { transition: opacity 320ms var(--ease), transform 320ms var(--ease); }
+.hero.scrub-on:not([data-act="1"]) .hero__act1group { opacity: 0; transform: translateY(-16px); pointer-events: none; }
+.hero__act {
+  position: absolute; left: 0; right: 0; bottom: 34vh; z-index: 2;
+  opacity: 0; transform: translateY(24px); pointer-events: none;
+  transition: opacity 320ms var(--ease), transform 320ms var(--ease);
+}
+.hero__act-line {
+  font-family: var(--font-display); font-weight: 700; text-transform: uppercase;
+  font-size: var(--fs-h1); line-height: 0.92; letter-spacing: -0.01em;
+  color: var(--cave-ivory); max-width: 12ch;
+}
+.hero__act .label { display: block; margin-top: 20px; color: var(--cave-stone); }
+.hero.scrub-on[data-act="2"] .hero__act--2,
+.hero.scrub-on[data-act="3"] .hero__act--3 { opacity: 1; transform: none; }
+.hero__hint {
+  position: absolute; right: clamp(20px, 5vw, 88px); bottom: 8vh; z-index: 2;
+  display: none; align-items: center; gap: 12px; color: var(--cave-stone);
+  opacity: 0; transition: opacity 320ms var(--ease);
+}
+.hero__hint::after { content: ""; width: 1px; height: 44px; background: var(--cave-hairline); }
+.hero.scrub-on .hero__hint { display: flex; flex-direction: column; opacity: 1; }
+.hero.scrub-on:not([data-act="1"]) .hero__hint { opacity: 0; }
+@media (prefers-reduced-motion: reduce) {
+  .hero.scrub-on { height: auto; }
+}
+
+/* act 4 — glow finale: stage text clears; the film's own lit lettering is the
+   headline and the ivory primary CTA is the only cool element on a warm frame. */
+
+/* ============================================================
+   PHONE LAYER (below the fold) — same two gates as the phone
+   layer in critical.css: <=899px, or coarse-pointer no-hover
+   short-landscape phones up to 950px (932x430 iPhone Pro Max).
+   Nothing here can match a fine-pointer desktop browser.
+   ============================================================ */
+@media (max-width: 899px),
+       (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 950px) {
+  /* reassurance, notes, form help and status read at full body size on glass
+     (.final .reassure repeated to outrank the desktop-scoped selector) */
+  .svc-note, .reassure, .final .reassure, .form-note, .form-field .hint, .form-status { font-size: 1rem; }
+
+  /* labels never force horizontal scroll: at normal text size every CTA fits
+     on one line, but 320px screens and enlarged text may wrap instead */
+  .btn { white-space: normal; }
+
+  /* enlarged-text resilience: at 200% text size rows wrap instead of
+     overflowing; at normal size all of these fit on one line unchanged */
+  .sec-head { flex-wrap: wrap; }
+  .status-line { flex-wrap: wrap; }
+  .find__grid > *, .about-body > *, .exp__grid > * { min-width: 0; }
+  .find__contact a, .ftr a, .mmenu__meta, .legal-body p, .about-body .prose p,
+  .mono-link { overflow-wrap: anywhere; }
+  .menu-table td.t-time, .menu-table td.t-price { white-space: normal; }
+  /* header letter-spacing relaxes on phones and long service words may break
+     under pressure, so the widest table's min-content stays inside the
+     viewport even at 200% text size (no effect at normal size — every name
+     fits without breaking) */
+  .menu-table th { letter-spacing: 0.12em; }
+  .menu-table td:first-child { overflow-wrap: anywhere; }
+
+  /* full-screen menu: notch-aware padding, safe bottom, no scroll chaining;
+     .open wins over the desktop display:none guard for 900-950px landscape */
+  .mmenu {
+    padding: calc(var(--hdr-h, 84px) + 12px)
+             max(var(--gutter), env(safe-area-inset-right, 0px))
+             calc(28px + env(safe-area-inset-bottom, 0px))
+             max(var(--gutter), env(safe-area-inset-left, 0px));
+    overscroll-behavior: contain;
+  }
+  .mmenu.open { display: flex !important; }
+  .mmenu__meta { line-height: 1.7; }
+  .mmenu__meta a { display: inline-block; padding-block: 12px; }
+
+  /* touch targets: 44px minimum on every booking/contact/navigation control
+     (hero-meta targets live in critical.css — they paint with the hero) */
+  .find__contact li { padding: 0; }
+  .find__contact a { display: inline-flex; align-items: center; min-height: 44px; }
+  .ftr li { padding: 0; }
+  .ftr li a { display: inline-flex; align-items: center; min-height: 44px; }
+  .ftr__base { gap: 0 28px; }
+  .ftr__base a { display: inline-flex; align-items: center; min-height: 44px; }
+  .ftr__social a { padding: 13px; }
+  .mono-link, .book-with { min-height: 44px; }
+  .about-body .meta-line a { display: inline-flex; align-items: center; min-height: 44px; }
+
+  /* work/gallery captions never depend on hover on touch screens
+     (repeats the narrow-viewport rule for 900-950px landscape phones) */
+  /* a static caption sits inside the frame, so it needs clearance from the
+     bottom rule the border-image draws across the tile edge */
+  .tile .cap { position: static; opacity: 1; transform: none; background: none; padding: 12px 6px 10px; color: var(--cave-stone); }
+
+  /* careers: focused fields scroll clear of the header and the iOS keyboard
+     (the grid min-width release lives in critical.css with the first paint) */
+  .form-field input, .form-field textarea { scroll-margin-block: calc(var(--hdr-h, 84px) + 8px) 120px; }
+
+}
+
+/* Portrait-phone scrub film. Safari's visible viewport changes as its browser
+   chrome expands and collapses, so every copy state and action is anchored to
+   the same 100dvh stage. JS supplies --hero-actions-h from the live action
+   stack; no text state can drift through the booking controls. */
+@media (max-width: 899px) and (orientation: portrait) {
+  .hero.scrub-on {
+    height: calc(100dvh + var(--scrub-runway, 360vh));
+    --hero-actions-bottom: max(18px, env(safe-area-inset-bottom, 0px));
+    --hero-copy-gap: clamp(18px, 3svh, 28px);
+    --hero-mobile-gutter: max(var(--gutter), env(safe-area-inset-left, 0px));
+  }
+  .hero.scrub-on .hero__stage {
+    height: 100dvh; min-height: 100svh;
+    isolation: isolate;
+  }
+
+  /* Explicit non-negative media layers avoid WebKit's stale-tile failures
+     when a canvas or hardware video lives inside a negative stacking context. */
+  .hero.scrub-on .hero__media { z-index: 0; }
+  .hero.scrub-on .hero__media picture,
+  .hero.scrub-on .hero__media picture img { z-index: 0; }
+  .hero.scrub-on .hero__film { z-index: 1; }
+  .hero.scrub-on .hero__media::after { z-index: 2; }
+  .hero.scrub-on .hero__film video { z-index: 0; }
+
+  .hero.scrub-on .hero__content {
+    position: absolute; inset: 0; z-index: 3; width: 100%; max-width: none;
+    margin: 0; padding: 0;
+  }
+  .hero.scrub-on .hero__grid,
+  .hero.scrub-on .hero__inner { height: 100%; }
+
+  .hero.scrub-on .hero__act1group:not(.hero__meta),
+  .hero.scrub-on .hero__act {
+    position: absolute;
+    top: calc(var(--hdr-h, 84px) + clamp(12px, 2.5svh, 24px));
+    right: max(var(--gutter), env(safe-area-inset-right, 0px));
+    bottom: calc(var(--hero-actions-bottom) + var(--hero-actions-h, 174px) + var(--hero-copy-gap));
+    left: var(--hero-mobile-gutter);
+    display: flex; flex-direction: column; justify-content: flex-end;
+    z-index: 4; min-height: 0; overflow: hidden;
+  }
+  .hero.scrub-on .hero__act {
+    font-size: inherit;
+  }
+  .hero.scrub-on .hero__act-line {
+    font-size: clamp(2rem, 9vw, 3rem); max-width: 14ch;
+    text-wrap: balance;
+  }
+  /* The final copy beat is the phone film's signature title. It enters as a
+     single decisive upward reveal, then settles sharply over the line-art
+     frame. The clip/transform/filter combination avoids layout movement. */
+  .hero.scrub-on .hero__act--3 {
+    opacity: 0;
+    transform: translateY(34px);
+    transition:
+      opacity 240ms linear,
+      transform 560ms var(--ease);
+  }
+  .hero.scrub-on .hero__act--3 .hero__act-line {
+    width: 100%; max-width: 12ch;
+    font-size: clamp(4.5rem, 21vw, 5.5rem);
+    line-height: 0.82;
+    letter-spacing: -0.02em;
+    text-wrap: balance;
+    clip-path: inset(100% 0 0 0);
+    filter: blur(4px);
+    transition: clip-path 560ms var(--ease), filter 420ms var(--ease);
+    will-change: clip-path, filter;
+  }
+  .hero.scrub-on[data-act="3"] .hero__act--3 {
+    opacity: 1;
+    transform: translateY(0);
+  }
+  .hero.scrub-on[data-act="3"] .hero__act--3 .hero__act-line {
+    clip-path: inset(0 0 0 0);
+    filter: blur(0);
+  }
+
+  .hero.scrub-on .hero__persist {
+    position: absolute;
+    right: max(var(--gutter), env(safe-area-inset-right, 0px));
+    bottom: var(--hero-actions-bottom);
+    left: var(--hero-mobile-gutter);
+    z-index: 4;
+  }
+  .hero.scrub-on .hero__cta {
+    display: grid; grid-template-columns: 1fr; gap: 12px; margin-top: 0;
+  }
+  .hero.scrub-on .hero__cta .btn {
+    width: 100%; min-height: 54px; justify-content: center;
+    padding: 14px 16px; white-space: nowrap;
+  }
+  .hero.scrub-on .hero__micro { margin-top: 12px; line-height: 1.65; }
+  .hero.scrub-on .hero__meta,
+  .hero.scrub-on .hero__hint { display: none; }
+}
+
+/* On genuinely short phone viewports the headline and actions are the useful
+   first-screen information. The lead remains in the non-scrub fallback and
+   the document, but does not get squeezed into the scrub stage. */
+@media (max-width: 899px) and (orientation: portrait) and (max-height: 700px) {
+  .hero.scrub-on .hero__lead { display: none; }
+  .hero.scrub-on .hero__act1group:not(.hero__meta) .label { margin-bottom: 12px; }
+  .hero.scrub-on h1 { font-size: clamp(2.75rem, 14vw, 3.5rem); }
+}
+
+/* short phone landscape (568x320 … 932x430): compact the menu so the five
+   links, both actions and the meta stay reachable above the fold or scroll
+   cleanly; the close control never leaves the screen. */
+@media (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 950px) {
+  .mmenu { padding-top: calc(var(--hdr-h, 84px) + 4px); }
+  .mmenu a.mm-link { padding: 12px 0; font-size: 1.125rem; }
+  .mmenu__actions { margin-top: 18px; flex-direction: row; flex-wrap: wrap; gap: 12px; }
+  .mmenu__meta { margin-top: 14px; }
+}
+
+/* ---------- primary booking action ----------------------------------------
+   This carried a luminous copper plate (border-image) plus a specular sweep on
+   a 3s infinite loop. A button that glows and shines on its own is signage —
+   it advertises rather than invites, and looping motion with nothing to report
+   is the single loudest thing a quiet page can contain.
+   The ivory field against near-black is already the strongest contrast on the
+   site; that is the whole emphasis it needs. Motion is spent on the arrow, on
+   intent only. */
+.btn--primary { position: relative; }
+.btn--primary:hover { background: var(--cave-bone); }
+
+/* iOS Safari compositing guards for the fixed header over the hero film.
+   (The shine-sweep overrides that used to live here went with the sweep.) */
+@media (max-width: 899px),
+       (hover: none) and (pointer: coarse) and (orientation: landscape) and (max-height: 500px) and (max-width: 950px) {
+  .hdr {
+    isolation: isolate;
+    -webkit-transform: translateZ(0);
+    transform: translateZ(0);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+  }
+  .hdr__in,
+  .hero.scrub-on .hero__persist {
+    -webkit-transform: translate3d(0, 0, 1px);
+    transform: translate3d(0, 0, 1px);
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+    will-change: transform;
+  }
+  .hero.scrub-on .hero__act1group:not(.hero__meta),
+  .hero.scrub-on .hero__act { will-change: opacity, transform; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero.scrub-on .hero__act--3 {
+    transform: none; transition: none;
+  }
+  .hero.scrub-on .hero__act--3 .hero__act-line {
+    clip-path: none; filter: none; transition: none;
+  }
+}
+
+/* ---------- WhatsApp actions ----------------------------------------------
+   These wore a mineral-green neon plate on a 3.2s breathing loop, mirroring the
+   copper one on BOOK. Two pulsing signs either side of a headline is a shopfront
+   at night, not a booking choice. The green survives where it carries meaning —
+   the glyph — and the button itself defers to the primary. */
+.btn[href*="wa.me"] { position: relative; }
+.btn[href*="wa.me"] svg { color: var(--cave-green-300); }
+.btn--copper[href*="wa.me"] svg { color: var(--cave-green-300); }

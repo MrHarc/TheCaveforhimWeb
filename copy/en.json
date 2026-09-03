@@ -1,0 +1,314 @@
+{
+ "_comment": "All English copy. Spec-written lines are used verbatim. Sentence rules: under 18 words, no exclamation marks, second person, present tense.",
+ "lang": "en",
+ "hreflang": "en-GB",
+ "dir_prefix": "",
+ "meta": {
+  "home_title": "The Cave | Barbershop in La Cala de Mijas, Málaga",
+  "home_desc": "Precision cuts, beard design and traditional shaves in La Cala de Mijas. Book online with Gabriel or Ygor at The Cave, Av. Las Gardenias 9, Mijas Costa.",
+  "services_title": "Services | The Cave, La Cala de Mijas",
+  "services_desc": "The full priced menu at The Cave barbershop in La Cala de Mijas. Cuts, beard design, traditional shaves and grooming, with from-prices and durations.",
+  "experience_title": "The Experience | The Cave, La Cala de Mijas",
+  "experience_desc": "How a cut at The Cave works: consultation, the cut, the finish and the room. A men's barbershop in La Cala de Mijas.",
+  "gallery_title": "Gallery | The Cave, La Cala de Mijas",
+  "gallery_desc": "Recent cuts, fades and beard work from the chairs at The Cave barbershop, La Cala de Mijas. Every photo is our own work.",
+  "about_title": "About | The Cave, La Cala de Mijas",
+  "about_desc": "The Cave is a men's barbershop on Av. Las Gardenias in La Cala de Mijas, operating within London and Co. Cuts, beards and shaves, by appointment.",
+  "findus_title": "Find Us | The Cave, La Cala de Mijas",
+  "findus_desc": "The Cave barbershop, Av. Las Gardenias 9, local 1, Jardín Botánico, Mijas Costa, Málaga 29649. Opening hours, phone, WhatsApp and directions.",
+  "careers_title": "Careers | The Cave, La Cala de Mijas",
+  "careers_desc": "Barber jobs at The Cave in La Cala de Mijas. Introduce yourself and show us your work.",
+  "privacy_title": "Privacy | The Cave, La Cala de Mijas",
+  "privacy_desc": "Privacy information for thecaveforhim.com.",
+  "cookies_title": "Cookies | The Cave, La Cala de Mijas",
+  "cookies_desc": "Cookie information for thecaveforhim.com. This site sets no cookies.",
+  "notfound_title": "Page not found | The Cave, La Cala de Mijas"
+ },
+ "nav": {
+  "services": "Services",
+  "experience": "The Experience",
+  "gallery": "Gallery",
+  "about": "About",
+  "findus": "Find Us",
+  "book": "Book Now",
+  "menu_open": "Open menu",
+  "menu_close": "Close menu",
+  "skip": "Skip to content"
+ },
+ "actions": {
+  "book_long": "Book an Appointment",
+  "book_final": "Book Your Appointment",
+  "whatsapp": "WhatsApp Us",
+  "book_aria": "Opens the online booking system in a new tab",
+  "whatsapp_aria": "Opens a WhatsApp chat in a new tab",
+  "booking_micro": "Choose your barber · Confirmed instantly",
+  "booking_reassure": "Booking takes about two minutes — you will get a confirmation message at the end.",
+  "directions": "Get Directions",
+  "view_services": "View All Services",
+  "view_gallery": "View Full Gallery",
+  "follow": "Follow @thecaveforhim",
+  "back_home": "Back to the homepage"
+ },
+ "status": {
+  "open_until": "Open today until {t}",
+  "closed_today": "Closed today",
+  "closed_now": "Closed · opens {d} at {t}",
+  "days_long": [
+   "Monday",
+   "Tuesday",
+   "Wednesday",
+   "Thursday",
+   "Friday",
+   "Saturday",
+   "Sunday"
+  ],
+  "closed_word": "Closed",
+  "today_word": "Today"
+ },
+ "hero": {
+  "eyebrow": "Barbershop · La Cala de Mijas, Málaga",
+  "h1_l1": "Enter the Cave.",
+  "h1_l2": "Leave sharper.",
+  "lead": "Precision cuts, beard design and traditional shaves on Avenida Las Gardenias. By appointment.",
+  "rating_label": "{v} on Google",
+  "hero_alt": "Inside The Cave barbershop in La Cala de Mijas: red barber chairs, branded black capes and the hexagonal LED ceiling",
+  "act2_line": "Sharp is a standard, not a favour.",
+  "act3_line": "Cut with intention.",
+  "scroll_hint": "Scroll"
+ },
+ "statement": {
+  "label": "02 — The Cave",
+  "body_parts": [
+   "Some men come in every three weeks. Some come in once, on holiday, and then plan the rest of their trip around the next appointment. Either way the room is the same: ",
+   "low light, a good chair, a barber who asks what you actually want",
+   " before anything is switched on. We do cuts, beards and shaves in La Cala de Mijas. ",
+   "We do them properly."
+  ]
+ },
+ "services_home": {
+  "label": "03 — The Menu",
+  "h2": "What We Do",
+  "svc_g1": "Cut",
+  "svc_g2": "Beard",
+  "svc_g3": "Shave",
+  "svc_g4": "Grooming",
+  "note": "From-prices. Final price depends on hair length, style and the time your cut takes.",
+  "from": "from",
+  "min": "min"
+ },
+ "experience": {
+  "label": "04 — The Experience",
+  "h2": "Craft Over Speed",
+  "pillars": [
+   {
+    "n": "01",
+    "h": "The Consultation",
+    "p": "We ask first. Your hair, your head shape, how you wear it on a Tuesday morning. Then we start."
+   },
+   {
+    "n": "02",
+    "h": "The Cut",
+    "p": "Clippers, scissors and a straight razor, used in the order the cut requires. Fades taken down clean, lines set square."
+   },
+   {
+    "n": "03",
+    "h": "The Finish",
+    "p": "Hot towel, product chosen for your hair rather than for the shelf, and a finish you can repeat at home."
+   },
+   {
+    "n": "04",
+    "h": "The Room",
+    "p": "Low light, red leather, and no rush. Booked time is your time."
+   }
+  ],
+  "quote": "A good cut should still look right on day nineteen.",
+  "room_alt": "Red leather barber chairs and branded capes under the hexagonal LED ceiling at The Cave",
+  "consult_slot_label": "IMG-EXP-01 — barber and client talking before the cut · 4:5",
+  "page_intro": "A cut here is forty-five minutes with a purpose. This is how the chair works.",
+  "page_video_note": "Filmed inside the shop.",
+  "poster_alt": "Straight-razor detailing on a client at The Cave barbershop in La Cala de Mijas",
+  "consult_alt": "Barbers and a client talking in the chair before the cut at The Cave"
+ },
+ "break": {
+  "statement": "Good grooming never goes out of style.",
+  "alt": "The Cave barbershop shopfront and painted London mural on Avenida Las Gardenias, La Cala de Mijas"
+ },
+ "barbers": {
+  "label": "06 — The Chairs",
+  "h2": "The Barbers",
+  "role": "Barber",
+  "book_with": "Book with {name}"
+ },
+ "work": {
+  "label": "07 — The Work",
+  "h2": "Look Closer",
+  "captions": {
+   "work-01": "Skin fade, squared at the temple",
+   "work-02": "Textured crop over a faded beard",
+   "work-03": "Textured fringe, low fade",
+   "work-04": "Curls shaped over a taper",
+   "work-05": "Scissor work, clean neckline",
+   "work-06": "Low fade, blended to the skin"
+  },
+  "tile_aria": "Opens this cut on Instagram in a new tab"
+ },
+ "social": {
+  "label": "08 — Social",
+  "h2": "From Inside the Cave",
+  "line": "Every cut on this page happened in this room.",
+  "drag": "Drag",
+  "alts": [
+   "Textured fringe and low fade cut at The Cave barbershop",
+   "Curly top taper fade cut at The Cave barbershop",
+   "Red barber chairs and branded capes inside The Cave",
+   "Skin fade side profile cut at The Cave barbershop"
+  ]
+ },
+ "findus": {
+  "label": "09 — Find Us",
+  "h2": "Find the Cave",
+  "hours_h": "Opening Hours",
+  "contact_h": "Contact",
+  "storefront_alt": "The Cave barbershop entrance sign on Avenida Las Gardenias, La Cala de Mijas",
+  "plus_code": "Plus code",
+  "page_note": "The shop is inside the London and Co. premises on Av. Las Gardenias. Follow the black The Cave sign."
+ },
+ "final": {
+  "h2": "Ready for your next cut?",
+  "line": "Pick a service, pick a barber, pick a time."
+ },
+ "footer": {
+  "descriptor": "La Cala de Mijas barbering, done with intent.",
+  "col_visit": "Visit",
+  "col_contact": "Contact",
+  "col_hours": "Hours",
+  "sister_line": "Part of London and Co., La Cala de Mijas",
+  "privacy": "Privacy",
+  "cookies": "Cookies",
+  "careers": "Careers",
+  "attributes_line": "Listed on Google as LGBTQ+ friendly and women-owned."
+ },
+ "services_page": {
+  "h1": "The Menu",
+  "intro": "Every price below is a from-price, taken from our booking system. Durations are the time we book for you.",
+  "note": "From-prices. Final price depends on hair length, style and the time your cut takes.",
+  "th_service": "Service",
+  "th_time": "Time",
+  "th_from": "From",
+  "group_names": {
+   "cuts": "Cuts",
+   "beard": "Beard",
+   "cut-beard": "Cut and Beard",
+   "shave": "Shave",
+   "detail": "Detail and Grooming"
+  },
+  "svc_alts": {
+   "svc-cut": "Skin fade in progress at The Cave barbershop in La Cala de Mijas",
+   "svc-beard": "Beard faded and shaped at The Cave barbershop",
+   "svc-shave": "Straight-razor shave with the client reclined at The Cave",
+   "svc-detail": "Neckline finished clean after a scissor cut at The Cave",
+   "svc-combo": "Fade finished and the beard line trimmed in the same sitting at The Cave"
+  },
+  "eyebrow": "The Menu"
+ },
+ "gallery_page": {
+  "h1": "The Work",
+  "intro": "Cuts, fades and beards from our own chairs. Nothing staged, nothing borrowed.",
+  "outro": "There is more where this came from."
+ },
+ "about_page": {
+  "h1": "The Cave, La Cala de Mijas",
+  "p1": "The Cave is the men's barbershop on Av. Las Gardenias, inside the London and Co. premises. You come here for cuts, beard design, traditional shaves and grooming.",
+  "p2": "The room is hard to mistake: a hexagonal LED ceiling, deep red chairs, black capes with the wordmark. Two barbers take bookings by name, Gabriel and Ygor. You choose your barber when you book.",
+  "p3": "Most of our clients live between Mijas Costa and Marbella. Plenty are here on holiday and book before their flight home.",
+  "attributes_intro": "The Google listing shows the shop as LGBTQ+ friendly and women-owned.",
+  "rating_line": "{v} on Google from {c} reviews.",
+  "cta_line": "The chair does the convincing.",
+  "eyebrow": "About"
+ },
+ "careers_page": {
+  "h1": "Work at The Cave",
+  "p1": "We hire barbers who care about the finish more than the clock. If that sounds like you, introduce yourself.",
+  "p2": "Send a few lines about yourself and where we can see your work. We reply to everyone.",
+  "f_name": "Your name",
+  "f_phone": "Phone or WhatsApp",
+  "f_msg": "About you and your work",
+  "f_msg_hint": "Where you cut now, and where we can see your work, for example an Instagram handle.",
+  "f_submit": "Compose Application Email",
+  "f_note": "The button opens your email app with the application addressed to us. This site stores nothing.",
+  "f_error_required": "Fill in your name and a few lines about yourself.",
+  "f_ok": "Your email app is opening with the application. Send it when ready.",
+  "f_subject": "Job application — The Cave",
+  "eyebrow": "Careers"
+ },
+ "legal_privacy": {
+  "h1": "Privacy",
+  "updated": "Last updated: August 2026",
+  "sections": [
+   {
+    "h": "Who we are",
+    "p": "This site belongs to The Cave, a barbershop operating within London and Co., Av. Las Gardenias 9, local 1, Jardín Botánico, Mijas Costa, Málaga 29649, Spain. Contact: thelondonandco@gmail.com."
+   },
+   {
+    "h": "What this site collects",
+    "p": "Nothing. This site has no analytics, no tracking pixels, no marketing tags and no forms that send data to us or to third parties. The careers page composes an email in your own email app; nothing is stored or transmitted by this site."
+   },
+   {
+    "h": "Server logs",
+    "p": "The company hosting this website may keep standard technical access logs, such as IP address and time of request, for security. We do not use them to identify you."
+   },
+   {
+    "h": "External services you may choose to open",
+    "p": "Booking runs on Shortcuts Software, an external system with its own privacy policy. Links to WhatsApp, Instagram, Facebook and Google Maps take you to those services, which process data under their own policies. Nothing loads from them until you click."
+   },
+   {
+    "h": "Your rights",
+    "p": "Under the GDPR you can ask us what personal data we hold about you and ask for its correction or deletion. Write to thelondonandco@gmail.com."
+   }
+  ]
+ },
+ "legal_cookies": {
+  "h1": "Cookies",
+  "updated": "Last updated: August 2026",
+  "sections": [
+   {
+    "h": "The short version",
+    "p": "This website sets no cookies. None. That is why there is no cookie banner."
+   },
+   {
+    "h": "No third-party scripts",
+    "p": "No analytics, no embedded social feeds, no chat widgets and no advertising tags load on this site."
+   },
+   {
+    "h": "When you leave this site",
+    "p": "The booking system, WhatsApp, Instagram, Facebook and Google Maps are external services. Once you open them, their own cookie policies apply."
+   },
+   {
+    "h": "If this changes",
+    "p": "If we ever add a service that needs cookies, this page and a consent banner will appear first. Consent will be a real choice, with reject as easy as accept."
+   }
+  ]
+ },
+ "notfound": {
+  "code": "404",
+  "h1": "This corridor goes nowhere.",
+  "p": "The page you want is not here. The chairs still are.",
+  "find": "Find the Cave"
+ },
+ "a11y": {
+  "nav_main": "Main",
+  "nav_menu": "Menu",
+  "logo_home": "{brand} — home",
+  "logo_alt": "{brand} — Barbershop, La Cala",
+  "instagram": "{brand} on Instagram",
+  "facebook": "{brand} on Facebook"
+ },
+ "lang_switch": {
+  "label": "Language",
+  "en": "EN",
+  "es": "ES",
+  "to_en": "View this page in English",
+  "to_es": "View this page in Spanish"
+ },
+ "legal_eyebrow": "Legal"
+}

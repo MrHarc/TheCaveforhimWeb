@@ -1,0 +1,34 @@
+# ---------------------------------------------------------------------------
+# THE CAVE — what does not belong in the repository
+#
+# The site is generated: `python3 src/build.py` writes the HTML in place from
+# copy/, data/ and assets/. The built pages ARE committed (they are small, and
+# they make the repo a complete, deployable snapshot). What is excluded below
+# is either regenerable in one command, machine-local, or working material far
+# larger than the site it produced.
+# ---------------------------------------------------------------------------
+
+# Packaged deploy output — rebuild with: ./src/make-dist.sh   (~32 MB)
+/dist/
+
+# QA rig (~292 MB): the harness scripts are worth keeping, the captured
+# imagery and its dependencies are not — every shot is reproducible by
+# re-running the script that made it.
+/qa/**
+!/qa/
+!/qa/*.mjs
+
+# Image retouching working set — upscaler inputs and outputs (~59 MB).
+# The finished, resized variants that the site actually serves live in assets/img.
+/upscale_batch/
+
+# Machine-local tooling state
+/.netlify/
+/.impeccable/
+/.claude/
+__pycache__/
+*.pyc
+
+# macOS
+.DS_Store
+**/.DS_Store
